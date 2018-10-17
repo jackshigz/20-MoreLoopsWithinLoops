@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Haoran Shi.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -55,7 +55,7 @@ def triangle_right_justified(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: Do the following problem FIRST, then convert x's to spaces:
@@ -73,7 +73,9 @@ def triangle_right_justified(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
-
+    for k in range(r):
+        print("x"*(k+1),end="")
+        print(k+1)
 
 def run_test_triangle_upside_down():
     """ Tests the    triangle_upside_down    function. """
@@ -109,7 +111,7 @@ def triangle_upside_down(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -117,8 +119,11 @@ def triangle_upside_down(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
-
-
+    for k in range(r):
+        print(" "*k,end="")
+        for j in range(r-k-1):
+            print(j+1,end="")
+        print(r-k)
 def run_test_vee():
     """ Tests the    vee    function. """
     print()
@@ -159,6 +164,16 @@ def vee(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(r):
+        print(" "*k,end="")
+        for j in range(r-k-1):
+            print(j+1,end="")
+        print(r-k,end="")
+        print("-",end="")
+        for i in range(r-k-1):
+            print(r-k-i,end="")
+        print(1)
+
     # ------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          Some tests are already written for you (above).
